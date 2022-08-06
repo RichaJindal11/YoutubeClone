@@ -3,7 +3,6 @@ document.querySelector('#search').addEventListener('click',()=>{
   
     const searchValue = document.querySelector("#my-text").value;
     console.log(searchValue)
-   // const url = 'https://www.googleapis.com/Youtube/v3/search?key=AIzaSyBY4UXGcMkl2wfnWk1nRGbkJurRAim5suE&part=snippet&q=${searchValue}&maxResults=50`
     const url = `https://www.googleapis.com/youtube/v3/search?key=AIzaSyBY4UXGcMkl2wfnWk1nRGbkJurRAim5suE&part=snippet&q=${searchValue}&maxResults=50`
     xhr.open('GET',url);
 
@@ -24,9 +23,9 @@ document.querySelector('#search').addEventListener('click',()=>{
                     let videoid= response.items[i].id.videoId
                     R = `watch?v=${videoid}`
                 }
-              //  let videoid = response.items[i].
+            
                 template+= 
-                `<div class="video-items" style="width: 20%; margin: 1.2em; border: 12px solid red">
+                `<div class="video-items" style="width: 20%; margin: 1.2em; border: 12px solid green">
                     <a href="https://www.youtube.com/${R}" target="_blank">
                         <img style="width: 100%" src="${response.items[i].snippet.thumbnails.high.url}" />
                     </a>
